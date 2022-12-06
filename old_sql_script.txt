@@ -1,0 +1,220 @@
+create database Bus_Reservation_System;
+
+1) table: billing
+
+CREATE TABLE billing (
+	
+	billing_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    reservation_id int(10) NOT NULL,
+
+    billing_mode VARCHAR(20) NOT NULL,
+
+    bustransaction_amount INT(20),
+
+    add_promo_code VARCHAR(20),
+
+    add_taxcharges VARCHAR(10) NOT NULL,
+
+    bustransaction_status VARCHAR(10) NOT NULL,
+
+    busbilling_currency VARCHAR(20) NOT NULL,
+
+    created_at TIMESTAMP,
+
+);
+
+=> reservation_id int FOREIGN KEY REFERENCES reservation(reservation_id)
+
+2) table: reservation
+
+CREATE TABLE reservation (
+
+    billireservation_id int NOT NULL PRIMARY KEY,
+
+    bus_id INT(10),
+
+    customer_id INT(10),
+
+    bus_rental_type_id INT(10),
+
+    reservation_last_location VARCHAR(25) NOT NULL,
+
+    reservation_duration INT(5) NOT NULL,
+
+    reservation_trip_amount INT(20) NOT NULL,
+
+    bus_km_start INT(20),
+
+    bus_km_end INT(20),
+
+    bus_fuel_start INT(20),
+
+    bus_fuel_end INT(20),
+
+    created_at TIMESTAMP,
+
+    updated_at TIMESTAMP,
+
+    reservation_status VARCHAR(20),
+
+    
+
+);
+
+reservation_id int FOREIGN KEY REFERENCES billing(reservation_id)
+
+3) table: bus
+
+Required Attrivutes: bus_id, bus_name, bus_engine_no, bus_chassis_no, bus_model_no, bus_price, bus_fuel_type, bus_seating_capacity, bus_registration_date, bus_policy, created_at
+
+CREATE TABLE bus (
+
+    bus_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    bus_name VARCHAR(25),
+
+    bus_engine_no VARCHAR(25),
+
+    bus_chassis_no VARCHAR(25) NOT NULL,
+
+    bus_model_no INT(5) NOT NULL,
+
+    bus_price INT(20) NOT NULL,
+
+    bus_fuel_type INT(20),
+
+    bus_seating_capacity INT(20),
+
+    bus_registration_date INT(20),
+
+    bus_policy INT(20),
+
+    created_at DATETIME,
+
+    updated_at DATETIME,
+
+    reservation_status VARCHAR(20),
+	
+	bus_insurance_type VARCHAR(25)
+
+);
+
+4) table: bus_type
+
+CREATE TABLE bus_type (
+
+    bus_type_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    bus_id VARCHAR(25),
+
+    bus_power_steering VARCHAR(25),
+
+    bus_air_conditioner VARCHAR(25) NOT NULL,
+
+    bus_passenger_airbag INT(5) NOT NULL,
+
+    bus_driver_airbag INT(20) NOT NULL,
+
+    bus_sun_roof INT(20),
+
+    bus_driver_seat INT(20),
+
+    bus_fog_lights INT(20),
+
+    bus_type INT(20),
+
+);
+
+
+5) table: customer
+
+CREATE TABLE customer (
+
+    customer_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    customer_first_name VARCHAR(25),
+
+    customer_last_name VARCHAR(25),
+
+    customer_adress VARCHAR(25) NOT NULL,
+
+    customer_mobile_number INT NOT NULL,
+
+    customer_role INT NOT NULL,
+
+    customer_dob INT,
+
+    customer_email INT,
+
+    customer_password INT,
+
+    customer_licecense INT,
+	
+	created_at DATETIME
+
+);
+
+6) table: Reimbursement
+
+CREATE TABLE reimbursement (
+
+    reimbursement_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    customer_first_name VARCHAR(25),
+
+    reservation_id VARCHAR(25),
+
+    deduction_reimbursedamount VARCHAR(25) NOT NULL,
+
+    reimbursement_status INT NOT NULL,
+
+    reimbursement_amount INT NOT NULL,
+
+    reimbursement_account INT,
+
+    created_at DATETIME,
+
+);
+
+7) table: process improve recommedation
+
+CREATE TABLE reimbursement (
+
+    pirId int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    pirStatus VARCHAR(25),
+
+    reservation_id VARCHAR(25),
+
+    deduction_reimbursedamount VARCHAR(25) NOT NULL,
+
+    reimbursement_status INT NOT NULL,
+
+    reimbursement_amount INT NOT NULL,
+
+    reimbursement_account INT,
+
+    created_at DATETIME,
+
+);
+
+8) CREATE TABLE bus_rental (
+
+    bus_rental_type_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    bus_rental_trip_selection VARCHAR(25),
+
+    bus_rental_seaters VARCHAR(25),
+
+    bus_rental_fuel_type VARCHAR(25) NOT NULL,
+
+    bus_rental_car_type INT NOT NULL,
+
+    bus_rental_auto_pilot INT NOT NULL,
+
+    bus_rental_start_date DATETIME,
+
+    bus_rental_end_date DATETIME,
+
+);

@@ -1,0 +1,189 @@
+create database Bus_Reservation_System;
+
+use Bus_Reservation_System;
+
+	CREATE TABLE billing (
+	
+	billing_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    reservation_id int  NOT NULL,
+
+    billing_mode VARCHAR(20) NOT NULL,
+
+    bustransaction_amount int ,
+
+    add_promo_code VARCHAR(20),
+
+    add_taxcharges VARCHAR(20) NOT NULL,
+
+    bustransaction_status VARCHAR(10) NOT NULL,
+
+    busbilling_currency VARCHAR(20) NOT NULL,
+
+    created_at TIMESTAMP,
+
+
+);
+
+reservation_id int FOREIGN KEY REFERENCES reservation(reservation_id)
+/* comment */
+CREATE TABLE reservation (
+
+    billireservation_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    bus_id INT,
+
+    customer_id INT,
+
+    bus_rental_type_id INT,
+
+    reservation_last_location VARCHAR(25) NOT NULL,
+
+    reservation_duration INT NOT NULL,
+
+    reservation_trip_amount INT NOT NULL,
+
+    bus_km_start INT,
+
+    bus_km_end INT,
+
+    bus_fuel_start INT,
+
+    bus_fuel_end INT,
+
+    created_at DATETIME,
+
+	created_At_TimeStamp TIMESTAMP,
+
+    updated_at DATETIME,
+
+    reservation_status VARCHAR(20),
+
+);
+
+    
+	reservation_id int FOREIGN KEY REFERENCES billing(reservation_id)
+
+
+/* comment */
+CREATE TABLE bus (
+
+    bus_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    bus_name VARCHAR(25),
+
+    bus_engine_no VARCHAR(25),
+
+    bus_chassis_no VARCHAR(25) NOT NULL,
+
+    bus_model_no INT NOT NULL,
+
+    bus_price INT NOT NULL,
+
+    bus_fuel_type INT,
+
+    bus_seating_capacity INT,
+
+    bus_registration_date INT,
+
+    bus_policy varchar(25),
+
+    created_at DATETIME,
+
+    updated_at DATETIME,
+
+    reservation_status VARCHAR(20),
+	
+	bus_insurance_type VARCHAR(25)
+
+);
+/* comment */
+CREATE TABLE bus_type (
+
+    bus_type_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    bus_id VARCHAR(25),
+
+    bus_power_steering VARCHAR(25),
+
+    bus_air_conditioner VARCHAR(25) NOT NULL,
+
+    bus_passenger_airbag INT NOT NULL,
+
+    bus_driver_airbag INT NOT NULL,
+
+    bus_sun_roof INT,
+
+    bus_driver_seat INT,
+
+    bus_fog_lights INT,
+
+    bus_type INT,
+
+);
+/* comment */
+CREATE TABLE customer (
+
+    customer_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    customer_first_name VARCHAR(25),
+
+    customer_last_name VARCHAR(25),
+
+    customer_adress VARCHAR(25) NOT NULL,
+
+    customer_mobile_number INT NOT NULL,
+
+    customer_role INT NOT NULL,
+
+    customer_dob INT,
+
+    customer_email INT,
+
+    customer_password INT,
+
+    customer_licecense INT,
+	
+	created_at DATETIME
+
+);
+/* comment */
+CREATE TABLE reimbursement (
+
+    reimbursement_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    customer_first_name VARCHAR(25),
+
+    reservation_id VARCHAR(25),
+
+    deduction_reimbursedamount VARCHAR(25) NOT NULL,
+
+    reimbursement_status INT NOT NULL,
+
+    reimbursement_amount INT NOT NULL,
+
+    reimbursement_account INT,
+
+    created_at DATETIME,
+
+);
+/* comment */
+CREATE TABLE bus_rental (
+
+    bus_rental_type_id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+    bus_rental_trip_selection VARCHAR(25),
+
+    bus_rental_seaters VARCHAR(25),
+
+    bus_rental_fuel_type VARCHAR(25) NOT NULL,
+
+    bus_rental_car_type INT NOT NULL,
+
+    bus_rental_auto_pilot INT NOT NULL,
+
+    bus_rental_start_date DATETIME,
+
+    bus_rental_end_date DATETIME,
+
+);
