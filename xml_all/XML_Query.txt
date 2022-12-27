@@ -1,0 +1,11 @@
+INSERT INTO Removed_Buses (Status, Time_Deleted_At, Bus_Id)
+SELECT
+   MY_XML.Bus.query('Status').value('.', 'VARCHAR(20)'),
+   MY_XML.Bus.query('Time_Deleted_At').value('.', 'datetime'),
+   MY_XML.Bus.query('Bus_Id').value('.', 'int')
+FROM (SELECT CAST(MY_XML AS xml)
+      FROM OPENROWSET(BULK 'E:\DBS\Advanced Databases\MSSQLTIPS_XML.xml', SINGLE_BLOB) AS T(MY_XML)) AS T(MY_XML)
+      CROSS APPLY MY_XML.nodes('Removed_Buses/Bus') AS MY_XML (Bus);
+
+
+SELECT * FROM [RentalAccomodationMgmtSystem].[dbo].[Removed_Buses]

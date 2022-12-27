@@ -1,0 +1,34 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Bus]
+           ([Bus_Name]
+           ,[Bus_Engine_No]
+           ,[Bus_Chassis_No]
+           ,[Bus_Model_No]
+           ,[Bus_Price]
+           ,[Bus_Fuel_Type]
+           ,[Bus_Seating_Capacity]
+           ,[Bus_Registration_Date]
+           ,[Bus_Policy]
+           ,[Created_at]
+           ,[Updated_at]
+           ,[Reservation_Status]
+           ,[Bus_Insurance_Type])
+     VALUES
+           ('Go Volvo'
+           ,'XmaLLLou4576'
+           ,'XmaLLLou45764TUy'
+           ,23
+           ,87000
+           ,'Diesel'
+           ,40
+           ,'1992-11-11'
+           ,'Incurred'
+           ,'2008-11-11'
+           ,'2008-11-12'
+           ,'Success'
+           ,'Silver')
+GO
+
+

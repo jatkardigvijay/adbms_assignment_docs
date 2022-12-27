@@ -1,0 +1,206 @@
+drop database RentalAccomodationMgmtSystem;
+create database RentalAccomodationMgmtSystem;
+
+CREATE TABLE Bus (
+
+   Bus_Id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+   Bus_Name VARCHAR(25) NOT NULL,
+
+   Bus_Engine_No VARCHAR(25) NOT NULL,
+
+   Bus_Chassis_No VARCHAR(25) NOT NULL,
+
+   Bus_Model_No INT NOT NULL,
+
+   Bus_Price INT NOT NULL,
+
+   Bus_Fuel_Type VARCHAR(25) ,
+
+   Bus_Seating_Capacity INT,
+
+   Bus_Registration_Date DATETIME,
+
+   Bus_Policy varchar(25),
+
+   Created_at DATETIME,
+
+   Updated_at DATETIME,
+
+   Reservation_Status VARCHAR(20),
+
+   Bus_Insurance_Type VARCHAR(25)
+
+);
+
+CREATE TABLE Customer (
+
+   Customer_Id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+   Customer_First_Name VARCHAR(25),
+
+   Customer_Last_Name VARCHAR(25),
+
+   Customer_Address VARCHAR(25) NOT NULL,
+
+   Customer_Mobile_Number INT NOT NULL,
+
+   Customer_Role VARCHAR(25) NOT NULL,
+
+   Customer_DateofBirth INT,
+
+   Customer_Email VARCHAR(25),
+
+   Customer_Password INT,
+
+   Customer_License INT,
+
+   Created_at DATETIME
+
+);
+
+CREATE TABLE Bus_Type (
+
+   Bus_Type_Id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+   Bus_Power_Steering VARCHAR(25),
+
+   Bus_Air_Conditioner VARCHAR(25) NOT NULL,
+
+   Bus_Passenger_Airbag INT NOT NULL,
+
+   Bus_Driver_Airbag INT NOT NULL,
+
+   Bus_Sun_Roof INT,
+
+   Bus_Driver_Seat INT,
+
+   Bus_Fog_Lights INT,
+
+   Bus_Type INT,
+
+   Bus_Id INT FOREIGN KEY REFERENCES Bus(Bus_Id)
+
+);
+
+ 
+
+CREATE TABLE Bus_Rental (
+
+   Bus_Rental_Id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+   Bus_Rental_Trip_Selection VARCHAR(25),
+
+   Bus_Rental_Seaters VARCHAR(25),
+
+   Bus_Rental_Fuel_Type VARCHAR(25) NOT NULL,
+
+   Bus_Rental_Bus_Type INT NOT NULL,
+
+   Bus_Rental_Auto_Pilot INT NOT NULL,
+
+   Bus_Rental_Start_Date DATETIME,
+
+   Bus_Rental_End_Date DATETIME,
+
+);
+
+CREATE TABLE Reservation (
+
+   Reservation_Id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+      Reservation_Last_Location VARCHAR(25) NOT NULL,
+
+      Reservation_Duration INT NOT NULL,
+
+      Reservation_Trip_Amount INT NOT NULL,
+
+      Bus_Km_Start INT,
+
+      Bus_Km_End INT,
+
+      Bus_Fuel_Start INT,
+
+      Bus_Fuel_End INT,
+
+      Created_At DATETIME,
+
+      Updated_At DATETIME,
+
+      Reservation_status VARCHAR(20),
+
+      Bus_Id INT FOREIGN KEY REFERENCES Bus(Bus_Id),
+
+      Customer_Id INT FOREIGN KEY REFERENCES Customer(Customer_Id),
+
+      Bus_Rental_Id INT FOREIGN KEY REFERENCES Bus_Rental(Bus_Rental_Id),
+
+);
+
+CREATE TABLE Billing (
+
+      Billing_Id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+   Billing_Mode VARCHAR(20) NOT NULL,
+
+   Bus_Transaction_Amount int ,
+
+   Add_Promo_Code VARCHAR(20),
+
+   Add_TaxCharges VARCHAR(20) NOT NULL,
+
+   Bus_Transaction_Status VARCHAR(10) NOT NULL,
+
+   BusBilling_Currency VARCHAR(20) NOT NULL,
+
+   Created_At TIMESTAMP,
+
+      Reservation_Id int FOREIGN KEY REFERENCES Reservation(Reservation_Id)
+
+);
+
+CREATE TABLE Reimbursement (
+
+   Reimbursement_Id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+   Customer_First_Name VARCHAR(25),
+
+   Deduction_Reimbursed_Amount VARCHAR(25) NOT NULL,
+
+   Reimbursement_Status INT NOT NULL,
+
+   Reimbursement_Amount INT NOT NULL,
+
+   Reimbursement_Account INT,
+
+   Created_At DATETIME,
+
+      Reservation_Id INT FOREIGN KEY REFERENCES Reservation(Reservation_Id)
+
+);
+
+CREATE TABLE Removed_Buses (
+
+   Bus_Removed_Id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+   Status VARCHAR(25),
+
+   Time_Deleted_At DATETIME,
+
+      Bus_Id INT FOREIGN KEY REFERENCES Bus(Bus_Id)
+
+);
+
+ 
+
+CREATE TABLE Reimbursement_Logs (
+
+   Reimbursement_Log_Id int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+
+   Reimbursement_BackLog_Status VARCHAR(25),
+
+   Last_Updated_At DATETIME,
+
+      Reimbursement_Id INT FOREIGN KEY REFERENCES Reimbursement(Reimbursement_Id)
+
+);

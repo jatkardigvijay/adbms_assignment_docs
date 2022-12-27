@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Removed_Buses>
+  <Bus>
+    <Status>Success</Status>
+    <Time_Deleted_At>2008-11-11</Time_Deleted_At>
+    <Bus_Id>1</Bus_Id>
+  </Bus>
+  <Bus>
+    <Status>Processed</Status>
+    <Time_Deleted_At>2008-10-31</Time_Deleted_At>
+    <Bus_Id>2</Bus_Id>
+  </Bus>
+  <Bus>
+    <Status>Processed</Status>
+    <Time_Deleted_At>2022-11-11</Time_Deleted_At>
+    <Bus_Id>3</Bus_Id>
+  </Bus>
+  <Bus>
+    <Status>Success</Status>
+    <Time_Deleted_At>2008-11-11</Time_Deleted_At>
+    <Bus_Id>4</Bus_Id>
+  </Bus>
+</Removed_Buses>
