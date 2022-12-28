@@ -1,0 +1,30 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GetReservationByReservationStatus]    Script Date: 28-Dec-22 1:03:49 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[SP_GetReservationByReservationStatus]
+	-- Add the parameters for the stored procedure here
+	(@Reservation_status varchar(20))
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT	   Customer.Customer_First_Name, Customer.Customer_Last_Name, Customer.Customer_Email, Customer.Customer_Mobile_Number,
+		   Reservation.Reservation_Duration, Reservation.Reservation_Last_Location, Reservation.Reservation_Trip_Amount
+		   from Customer 
+		   INNER JOIN 
+		   Reservation ON Customer.Customer_Id = Reservation.Reservation_Id
+		   WHERE Reservation_status = @Reservation_status
+		   /*'Confirm';*/
+END

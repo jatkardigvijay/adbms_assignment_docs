@@ -1,0 +1,104 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Bus_Rental]
+           ([Bus_Rental_Trip_Selection]
+           ,[Bus_Rental_Seaters]
+           ,[Bus_Rental_Fuel_Type]
+           ,[Bus_Rental_Bus_Type]
+           ,[Bus_Rental_Auto_Pilot]
+           ,[Bus_Rental_Start_Date]
+           ,[Bus_Rental_End_Date])
+     VALUES
+           ('Confirm'
+           ,5
+           ,'Diesel'
+           ,1
+           ,0
+           ,'2022-01-21'
+           ,'2022-01-27')
+GO
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Bus_Rental]
+           ([Bus_Rental_Trip_Selection]
+           ,[Bus_Rental_Seaters]
+           ,[Bus_Rental_Fuel_Type]
+           ,[Bus_Rental_Bus_Type]
+           ,[Bus_Rental_Auto_Pilot]
+           ,[Bus_Rental_Start_Date]
+           ,[Bus_Rental_End_Date])
+     VALUES
+           ('Session Saved'
+           ,3
+           ,'Electric'
+           ,1
+           ,0
+           ,'2022-03-15'
+           ,'2022-03-20')
+GO
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Bus_Rental]
+           ([Bus_Rental_Trip_Selection]
+           ,[Bus_Rental_Seaters]
+           ,[Bus_Rental_Fuel_Type]
+           ,[Bus_Rental_Bus_Type]
+           ,[Bus_Rental_Auto_Pilot]
+           ,[Bus_Rental_Start_Date]
+           ,[Bus_Rental_End_Date])
+     VALUES
+           ('In Process'
+           ,6
+           ,'Electric'
+           ,1
+           ,0
+           ,'2022-05-12'
+           ,'2022-05-27')
+GO
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Bus_Rental]
+           ([Bus_Rental_Trip_Selection]
+           ,[Bus_Rental_Seaters]
+           ,[Bus_Rental_Fuel_Type]
+           ,[Bus_Rental_Bus_Type]
+           ,[Bus_Rental_Auto_Pilot]
+           ,[Bus_Rental_Start_Date]
+           ,[Bus_Rental_End_Date])
+     VALUES
+           ('Success'
+           ,2
+           ,'Diesel'
+           ,1
+           ,0
+           ,'2022-08-05'
+           ,'2022-08-12')
+GO
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Bus_Rental]
+           ([Bus_Rental_Trip_Selection]
+           ,[Bus_Rental_Seaters]
+           ,[Bus_Rental_Fuel_Type]
+           ,[Bus_Rental_Bus_Type]
+           ,[Bus_Rental_Auto_Pilot]
+           ,[Bus_Rental_Start_Date]
+           ,[Bus_Rental_End_Date])
+     VALUES
+           ('Success'
+           ,2
+           ,'Diesel'
+           ,1
+           ,0
+           ,'2022-08-05'
+           ,'2022-08-12')
+GO

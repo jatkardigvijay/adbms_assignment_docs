@@ -1,0 +1,30 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GetReimbursementInfo]    Script Date: 28-Dec-22 1:01:42 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[SP_GetReimbursementInfo]
+	-- Add the parameters for the stored procedure here
+	(@Reimbursement_Status varchar(25))
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	select Reimbursement.Customer_First_Name, Reimbursement.Reimbursement_Amount,
+	   Reimbursement_Logs.Reimbursement_BackLog_Status 
+	   From Reimbursement
+	   INNER JOIN 
+	   Reimbursement_Logs on
+	   Reimbursement_Logs.Reimbursement_Log_Id = Reimbursement.Reimbursement_Id
+		where Reimbursement_Status = @Reimbursement_Status;
+END

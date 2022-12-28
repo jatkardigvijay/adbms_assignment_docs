@@ -1,0 +1,83 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Billing]
+           ([Billing_Mode]
+           ,[Bus_Transaction_Amount]
+           ,[Add_Promo_Code]
+           ,[Add_TaxCharges]
+           ,[Bus_Transaction_Status]
+           ,[BusBilling_Currency]
+           ,[Reservation_Id])
+     VALUES
+           ('Fixed'
+           ,12
+           ,''
+           ,0.11
+           ,'In '
+           ,'Euro'
+           ,1)
+GO
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Billing]
+           ([Billing_Mode]
+           ,[Bus_Transaction_Amount]
+           ,[Add_Promo_Code]
+           ,[Add_TaxCharges]
+           ,[Bus_Transaction_Status]
+           ,[BusBilling_Currency]
+           ,[Reservation_Id])
+     VALUES
+           ('Per Usage'
+           ,15
+           ,'FESTIVAL20'
+           ,0.11
+           ,'In '
+           ,'Euro'
+           ,1)
+GO
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Billing]
+           ([Billing_Mode]
+           ,[Bus_Transaction_Amount]
+           ,[Add_Promo_Code]
+           ,[Add_TaxCharges]
+           ,[Bus_Transaction_Status]
+           ,[BusBilling_Currency]
+           ,[Reservation_Id])
+     VALUES
+           ('Per Usage'
+           ,15
+           ,'FESTIVAL20'
+           ,0.11
+           ,'In '
+           ,'Euro'
+           ,1)
+GO
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Billing]
+           ([Billing_Mode]
+           ,[Bus_Transaction_Amount]
+           ,[Add_Promo_Code]
+           ,[Add_TaxCharges]
+           ,[Bus_Transaction_Status]
+           ,[BusBilling_Currency]
+           ,[Reservation_Id])
+     VALUES
+           ('Fixed'
+           ,15
+           ,'FESTIVAL20'
+           ,0.11
+           ,'In '
+           ,'Euro'
+           ,1)
+GO

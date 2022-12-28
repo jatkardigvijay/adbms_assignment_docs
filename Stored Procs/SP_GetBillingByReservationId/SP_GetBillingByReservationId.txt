@@ -1,0 +1,30 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GetBillingByReservationId]    Script Date: 28-Dec-22 12:43:56 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[SP_GetBillingByReservationId]
+	-- Add the parameters for the stored procedure here
+		(@ReservationId INT)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT Billing.Billing_Mode, Billing.Bus_Transaction_Amount, Billing.Add_TaxCharges, Billing.Bus_Transaction_Status,
+	Reservation.Reservation_Last_Location, Reservation.Reservation_Duration, Reservation.Reservation_status
+	from Billing
+	INNER JOIN Reservation
+	On Billing.Billing_Id = Reservation.Reservation_Id
+	where Reservation.Reservation_Id = 1
+	order by Reservation.Reservation_Duration
+END

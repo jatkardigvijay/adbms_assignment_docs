@@ -1,0 +1,108 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Customer]
+           ([Customer_First_Name]
+           ,[Customer_Last_Name]
+           ,[Customer_Address]
+           ,[Customer_Mobile_Number]
+           ,[Customer_Role]
+           ,[Customer_DateofBirth]
+           ,[Customer_Email]
+           ,[Customer_Password]
+           ,[Customer_License]
+           ,[Created_at])
+     VALUES
+           ('Arif'
+           ,'Khan'
+           ,'Rathgar, Dublin 6'
+           ,'+353 89 921 2112'
+           ,'Student'
+           ,'1994-07-31'
+           ,'khanarif@gmail.com'
+           ,'Nolva#21'
+           ,'20150623117899'
+           ,'2015-06-23')
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Customer]
+           ([Customer_First_Name]
+           ,[Customer_Last_Name]
+           ,[Customer_Address]
+           ,[Customer_Mobile_Number]
+           ,[Customer_Role]
+           ,[Customer_DateofBirth]
+           ,[Customer_Email]
+           ,[Customer_Password]
+           ,[Customer_License]
+           ,[Created_at])
+     VALUES
+           ('Swarnima'
+           ,'Lele'
+           ,'D06 0242,Dublin 8'
+           ,'+353 87 221 4563'
+           ,'Student'
+           ,'1995-08-20'
+           ,'leleswarnima@gmail.com'
+           ,'Polimn#%2'
+           ,'201812117899'
+           ,'2018-11-12')
+GO
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Customer]
+           ([Customer_First_Name]
+           ,[Customer_Last_Name]
+           ,[Customer_Address]
+           ,[Customer_Mobile_Number]
+           ,[Customer_Role]
+           ,[Customer_DateofBirth]
+           ,[Customer_Email]
+           ,[Customer_Password]
+           ,[Customer_License]
+           ,[Created_at])
+     VALUES
+           ('Joseph'
+           ,'Joshi'
+           ,'D0734Y0, Dublin 7'
+           ,'+353 89 054 7901'
+           ,'Student'
+           ,'1996-02-05'
+           ,'joshijosephjj@gmail.com'
+           ,'kolapur#21'
+           ,'201912117899'
+           ,'2019-11-12')
+GO
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Customer]
+           ([Customer_First_Name]
+           ,[Customer_Last_Name]
+           ,[Customer_Address]
+           ,[Customer_Mobile_Number]
+           ,[Customer_Role]
+           ,[Customer_DateofBirth]
+           ,[Customer_Email]
+           ,[Customer_Password]
+           ,[Customer_License]
+           ,[Created_at])
+     VALUES
+           ('Naresh'
+           ,'Shah'
+           ,'Ballsbridge, Dublin 04'
+           ,'+353 87 719 2344'
+           ,'Student'
+           ,'1990-04-24'
+           ,'maushah@gmail.com'
+           ,'Nshah@123'
+           ,'201212117899'
+           ,'2012-11-12')
+GO

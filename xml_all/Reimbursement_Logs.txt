@@ -1,0 +1,70 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Reimbursement_Logs]
+           ([Reimbursement_BackLog_Status]
+           ,[Last_Updated_At]
+           ,[Reimbursement_Id])
+     VALUES
+           ('Processed'
+           ,'2022-12-25'
+           ,6)
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Reimbursement_Logs]
+           ([Reimbursement_BackLog_Status]
+           ,[Last_Updated_At]
+           ,[Reimbursement_Id])
+     VALUES
+           ('Processed'
+           ,'2022-12-25'
+           ,5)
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Reimbursement_Logs]
+           ([Reimbursement_BackLog_Status]
+           ,[Last_Updated_At]
+           ,[Reimbursement_Id])
+     VALUES
+           ('Success'
+           ,'2022-12-25'
+           ,2)
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Reimbursement_Logs]
+           ([Reimbursement_BackLog_Status]
+           ,[Last_Updated_At]
+           ,[Reimbursement_Id])
+     VALUES
+           ('Processed'
+           ,'2022-12-25'
+           ,1)
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Reimbursement_Logs]
+           ([Reimbursement_BackLog_Status]
+           ,[Last_Updated_At]
+           ,[Reimbursement_Id])
+     VALUES
+           ('Processed'
+           ,'2022-12-25'
+           ,4)
+GO
+
+

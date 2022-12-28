@@ -1,0 +1,45 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Reimbursement]
+           ([Customer_First_Name]
+           ,[Deduction_Reimbursed_Amount]
+           ,[Reimbursement_Status]
+           ,[Reimbursement_Amount]
+           ,[Reimbursement_Account]
+           ,[Created_At]
+           ,[Reservation_Id])
+     VALUES
+           ('Naresh'
+           ,'2'
+           ,'Confirm'
+           ,2
+           ,2
+           ,'2022-11-12'
+           ,1)
+GO
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Reimbursement]
+           ([Customer_First_Name]
+           ,[Deduction_Reimbursed_Amount]
+           ,[Reimbursement_Status]
+           ,[Reimbursement_Amount]
+           ,[Reimbursement_Account]
+           ,[Created_At]
+           ,[Reservation_Id])
+     VALUES
+           ('Swarnima'
+           ,'1'
+           ,'Confirm'
+           ,2
+           ,2
+           ,'2022-11-13'
+           ,1)
+GO
+
+
+
+

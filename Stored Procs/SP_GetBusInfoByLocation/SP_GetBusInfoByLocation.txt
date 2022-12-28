@@ -1,0 +1,28 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GetBusInfoByLocation]    Script Date: 28-Dec-22 12:49:19 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[SP_GetBusInfoByLocation]
+	-- Add the parameters for the stored procedure here
+	(@Reservation_Last_Location varchar(25))
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT Bus.Bus_Name, Bus.Bus_Engine_No, Bus.Bus_Chassis_No, Reservation.Reservation_Last_Location, Reservation.Reservation_status from Bus
+	INNER JOIN Reservation
+	on Bus.Bus_Id = Reservation.Reservation_Id
+	where Reservation_Last_Location like '%' + TRIM(@Reservation_Last_Location) + '%' 
+	order by Bus.Bus_Id
+END

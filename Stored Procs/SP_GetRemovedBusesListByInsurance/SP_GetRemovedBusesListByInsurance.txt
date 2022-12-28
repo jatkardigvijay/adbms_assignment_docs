@@ -1,0 +1,29 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_GetRemovedBusesListByInsurance]    Script Date: 28-Dec-22 1:02:56 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[SP_GetRemovedBusesListByInsurance]
+	-- Add the parameters for the stored procedure here
+	(@Bus_Insurance_Type varchar(25))
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	select Bus.Bus_Name, Bus.Bus_Engine_No, Bus.Bus_Chassis_No, Bus.Bus_Fuel_Type, Removed_Buses.Bus_Removed_Id, Removed_Buses.Time_Deleted_At
+	   From Bus
+	   INNER JOIN 
+	   Removed_Buses on
+	   Bus.Bus_Id = Removed_Buses.Bus_Removed_Id
+		where Bus_Insurance_Type like '%' + trim(@Bus_Insurance_Type) + '%';
+END

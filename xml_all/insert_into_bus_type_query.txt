@@ -1,0 +1,133 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Bus_Type]
+           ([Bus_Power_Steering]
+           ,[Bus_Air_Conditioner]
+           ,[Bus_Passenger_Airbag]
+           ,[Bus_Driver_Airbag]
+           ,[Bus_Sun_Roof]
+           ,[Bus_Driver_Seat]
+           ,[Bus_Fog_Lights]
+           ,[Bus_Type]
+           ,[Bus_Id])
+     VALUES
+           ('EPS'
+           ,'Rolta'
+           ,44
+           ,1
+           ,1
+           ,1
+           ,2
+           ,1
+           ,2)
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Bus_Type]
+           ([Bus_Power_Steering]
+           ,[Bus_Air_Conditioner]
+           ,[Bus_Passenger_Airbag]
+           ,[Bus_Driver_Airbag]
+           ,[Bus_Sun_Roof]
+           ,[Bus_Driver_Seat]
+           ,[Bus_Fog_Lights]
+           ,[Bus_Type]
+           ,[Bus_Id])
+     VALUES
+           ('HPS'
+           ,'Rolta'
+           ,44
+           ,1
+           ,1
+           ,1
+           ,2
+           ,1
+           ,2)
+GO
+
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Bus_Type]
+           ([Bus_Power_Steering]
+           ,[Bus_Air_Conditioner]
+           ,[Bus_Passenger_Airbag]
+           ,[Bus_Driver_Airbag]
+           ,[Bus_Sun_Roof]
+           ,[Bus_Driver_Seat]
+           ,[Bus_Fog_Lights]
+           ,[Bus_Type]
+           ,[Bus_Id])
+     VALUES
+           ('EPS'
+           ,'Blue Star'
+           ,40
+           ,1
+           ,1
+           ,1
+           ,2
+           ,1
+           ,1)
+GO
+
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Bus_Type]
+           ([Bus_Power_Steering]
+           ,[Bus_Air_Conditioner]
+           ,[Bus_Passenger_Airbag]
+           ,[Bus_Driver_Airbag]
+           ,[Bus_Sun_Roof]
+           ,[Bus_Driver_Seat]
+           ,[Bus_Fog_Lights]
+           ,[Bus_Type]
+           ,[Bus_Id])
+     VALUES
+           ('EPHS'
+           ,'Blue Star'
+           ,44
+           ,1
+           ,1
+           ,1
+           ,2
+           ,1
+           ,5)
+GO
+
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Bus_Type]
+           ([Bus_Power_Steering]
+           ,[Bus_Air_Conditioner]
+           ,[Bus_Passenger_Airbag]
+           ,[Bus_Driver_Airbag]
+           ,[Bus_Sun_Roof]
+           ,[Bus_Driver_Seat]
+           ,[Bus_Fog_Lights]
+           ,[Bus_Type]
+           ,[Bus_Id])
+     VALUES
+           ('EPHS'
+           ,'Rolta'
+           ,44
+           ,1
+           ,1
+           ,1
+           ,2
+           ,1
+           ,5)
+GO
+
+

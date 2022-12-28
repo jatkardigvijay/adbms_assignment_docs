@@ -1,0 +1,169 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Reservation]
+           ([Reservation_Last_Location]
+           ,[Reservation_Duration]
+           ,[Reservation_Trip_Amount]
+           ,[Bus_Km_Start]
+           ,[Bus_Km_End]
+           ,[Bus_Fuel_Start]
+           ,[Bus_Fuel_End]
+           ,[Created_At]
+           ,[Updated_At]
+           ,[Reservation_status]
+           ,[Bus_Id]
+           ,[Customer_Id]
+           ,[Bus_Rental_Id])
+     VALUES
+           ('Dublin Airport'
+           ,4
+           ,14
+           ,889
+           ,939
+           ,331
+           ,325
+           ,2022-12-
+           ,2022-12-
+           ,'Confirm'
+           ,1
+           ,1
+           ,2)
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Reservation]
+           ([Reservation_Last_Location]
+           ,[Reservation_Duration]
+           ,[Reservation_Trip_Amount]
+           ,[Bus_Km_Start]
+           ,[Bus_Km_End]
+           ,[Bus_Fuel_Start]
+           ,[Bus_Fuel_End]
+           ,[Created_At]
+           ,[Updated_At]
+           ,[Reservation_status]
+           ,[Bus_Id]
+           ,[Customer_Id]
+           ,[Bus_Rental_Id])
+     VALUES
+           ('Dame Street'
+           ,3
+           ,13
+           ,678
+           ,726
+           ,460
+           ,455
+           ,2022-10-
+           ,2022-10-
+           ,'Confirm'
+           ,2
+           ,4
+           ,6)
+GO
+
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Reservation]
+           ([Reservation_Last_Location]
+           ,[Reservation_Duration]
+           ,[Reservation_Trip_Amount]
+           ,[Bus_Km_Start]
+           ,[Bus_Km_End]
+           ,[Bus_Fuel_Start]
+           ,[Bus_Fuel_End]
+           ,[Created_At]
+           ,[Updated_At]
+           ,'Confirm'
+           ,[Bus_Id]
+           ,[Customer_Id]
+           ,[Bus_Rental_Id])
+     VALUES
+           ('Talbot Street'
+           ,<Reservation_Duration, int,>
+           ,15
+           ,991
+           ,1091
+           ,288
+           ,278
+           ,<Created_At, datetime,>
+           ,<Updated_At, datetime,>
+           ,'Confirm'
+           ,3
+           ,2
+           ,4)
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Reservation]
+           ([Reservation_Last_Location]
+           ,[Reservation_Duration]
+           ,[Reservation_Trip_Amount]
+           ,[Bus_Km_Start]
+           ,[Bus_Km_End]
+           ,[Bus_Fuel_Start]
+           ,[Bus_Fuel_End]
+           ,[Created_At]
+           ,[Updated_At]
+           ,[Reservation_status]
+           ,[Bus_Id]
+           ,[Customer_Id]
+           ,[Bus_Rental_Id])
+     VALUES
+           ('Parnell Street'
+           ,2
+           ,12
+           ,3422
+           ,3492
+           ,137
+           ,130
+           ,2022-08-
+           ,2022-08-
+           ,'Confirm'
+           ,3
+           ,3
+           ,4)
+GO
+
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Reservation]
+           ([Reservation_Last_Location]
+           ,[Reservation_Duration]
+           ,[Reservation_Trip_Amount]
+           ,[Bus_Km_Start]
+           ,[Bus_Km_End]
+           ,[Bus_Fuel_Start]
+           ,[Bus_Fuel_End]
+           ,[Created_At]
+           ,[Updated_At]
+           ,[Reservation_status]
+           ,[Bus_Id]
+           ,[Customer_Id]
+           ,[Bus_Rental_Id])
+     VALUES
+           ('Dublin Airport'
+           ,2
+           ,12
+           ,7654
+           ,7754
+           ,189
+           ,178
+           ,2022-07-
+           ,2022-07-
+           ,'Confirm'
+           ,1
+           ,4
+           ,5)
+GO

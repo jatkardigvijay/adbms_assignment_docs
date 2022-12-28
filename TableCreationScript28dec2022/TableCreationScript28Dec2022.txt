@@ -1,0 +1,276 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+
+/****** Object:  Table [dbo].[Billing]    Script Date: 28-Dec-22 1:15:12 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Billing](
+	[Billing_Id] [int] IDENTITY(1,1) NOT NULL,
+	[Billing_Mode] [varchar](20) NOT NULL,
+	[Bus_Transaction_Amount] [int] NULL,
+	[Add_Promo_Code] [varchar](20) NULL,
+	[Add_TaxCharges] [varchar](20) NOT NULL,
+	[Bus_Transaction_Status] [varchar](10) NOT NULL,
+	[BusBilling_Currency] [varchar](20) NOT NULL,
+	[Created_At] [timestamp] NOT NULL,
+	[Reservation_Id] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Billing_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Billing]  WITH CHECK ADD FOREIGN KEY([Reservation_Id])
+REFERENCES [dbo].[Reservation] ([Reservation_Id])
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+/****** Object:  Table [dbo].[Bus]    Script Date: 28-Dec-22 1:15:40 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Bus](
+	[Bus_Id] [int] IDENTITY(1,1) NOT NULL,
+	[Bus_Name] [varchar](25) NOT NULL,
+	[Bus_Engine_No] [varchar](25) NOT NULL,
+	[Bus_Chassis_No] [varchar](25) NOT NULL,
+	[Bus_Model_No] [int] NOT NULL,
+	[Bus_Price] [int] NOT NULL,
+	[Bus_Fuel_Type] [varchar](25) NULL,
+	[Bus_Seating_Capacity] [int] NULL,
+	[Bus_Registration_Date] [datetime] NULL,
+	[Bus_Policy] [varchar](25) NULL,
+	[Created_at] [datetime] NULL,
+	[Updated_at] [datetime] NULL,
+	[Reservation_Status] [varchar](20) NULL,
+	[Bus_Insurance_Type] [varchar](25) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Bus_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+/****** Object:  Table [dbo].[Bus_Rental]    Script Date: 28-Dec-22 1:16:01 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Bus_Rental](
+	[Bus_Rental_Id] [int] IDENTITY(1,1) NOT NULL,
+	[Bus_Rental_Trip_Selection] [varchar](25) NULL,
+	[Bus_Rental_Seaters] [varchar](25) NULL,
+	[Bus_Rental_Fuel_Type] [varchar](25) NOT NULL,
+	[Bus_Rental_Bus_Type] [int] NOT NULL,
+	[Bus_Rental_Auto_Pilot] [int] NOT NULL,
+	[Bus_Rental_Start_Date] [datetime] NULL,
+	[Bus_Rental_End_Date] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Bus_Rental_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+INSERT INTO [dbo].[Bus_Type]
+           ([Bus_Power_Steering]
+           ,[Bus_Air_Conditioner]
+           ,[Bus_Passenger_Airbag]
+           ,[Bus_Driver_Airbag]
+           ,[Bus_Sun_Roof]
+           ,[Bus_Driver_Seat]
+           ,[Bus_Fog_Lights]
+           ,[Bus_Type]
+           ,[Bus_Id])
+     VALUES
+           (<Bus_Power_Steering, varchar(25),>
+           ,<Bus_Air_Conditioner, varchar(25),>
+           ,<Bus_Passenger_Airbag, int,>
+           ,<Bus_Driver_Airbag, int,>
+           ,<Bus_Sun_Roof, int,>
+           ,<Bus_Driver_Seat, int,>
+           ,<Bus_Fog_Lights, int,>
+           ,<Bus_Type, int,>
+           ,<Bus_Id, int,>)
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+/****** Object:  Table [dbo].[Customer]    Script Date: 28-Dec-22 1:16:35 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Customer](
+	[Customer_Id] [int] IDENTITY(1,1) NOT NULL,
+	[Customer_First_Name] [varchar](25) NULL,
+	[Customer_Last_Name] [varchar](25) NULL,
+	[Customer_Address] [varchar](25) NOT NULL,
+	[Customer_Mobile_Number] [varchar](50) NULL,
+	[Customer_Role] [varchar](25) NOT NULL,
+	[Customer_DateofBirth] [datetime] NULL,
+	[Customer_Email] [varchar](25) NULL,
+	[Customer_Password] [varchar](25) NULL,
+	[Customer_License] [varchar](25) NULL,
+	[Created_at] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Customer_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+/****** Object:  Table [dbo].[Reimbursement]    Script Date: 28-Dec-22 1:16:50 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Reimbursement](
+	[Reimbursement_Id] [int] IDENTITY(1,1) NOT NULL,
+	[Customer_First_Name] [varchar](25) NULL,
+	[Deduction_Reimbursed_Amount] [varchar](25) NOT NULL,
+	[Reimbursement_Status] [varchar](25) NULL,
+	[Reimbursement_Amount] [int] NOT NULL,
+	[Reimbursement_Account] [int] NULL,
+	[Created_At] [datetime] NULL,
+	[Reservation_Id] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Reimbursement_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Reimbursement]  WITH CHECK ADD FOREIGN KEY([Reservation_Id])
+REFERENCES [dbo].[Reservation] ([Reservation_Id])
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+/****** Object:  Table [dbo].[Reimbursement_Logs]    Script Date: 28-Dec-22 1:17:08 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Reimbursement_Logs](
+	[Reimbursement_Log_Id] [int] IDENTITY(1,1) NOT NULL,
+	[Reimbursement_BackLog_Status] [varchar](25) NULL,
+	[Last_Updated_At] [datetime] NULL,
+	[Reimbursement_Id] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Reimbursement_Log_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Reimbursement_Logs]  WITH CHECK ADD FOREIGN KEY([Reimbursement_Id])
+REFERENCES [dbo].[Reimbursement] ([Reimbursement_Id])
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+/****** Object:  Table [dbo].[Removed_Buses]    Script Date: 28-Dec-22 1:17:20 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Removed_Buses](
+	[Bus_Removed_Id] [int] IDENTITY(1,1) NOT NULL,
+	[Status] [varchar](25) NULL,
+	[Time_Deleted_At] [datetime] NULL,
+	[Bus_Id] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Bus_Removed_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Removed_Buses]  WITH CHECK ADD FOREIGN KEY([Bus_Id])
+REFERENCES [dbo].[Bus] ([Bus_Id])
+GO
+
+
+USE [RentalAccomodationMgmtSystem]
+GO
+
+/****** Object:  Table [dbo].[Reservation]    Script Date: 28-Dec-22 1:17:31 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Reservation](
+	[Reservation_Id] [int] IDENTITY(1,1) NOT NULL,
+	[Reservation_Last_Location] [varchar](25) NOT NULL,
+	[Reservation_Duration] [int] NOT NULL,
+	[Reservation_Trip_Amount] [int] NOT NULL,
+	[Bus_Km_Start] [int] NULL,
+	[Bus_Km_End] [int] NULL,
+	[Bus_Fuel_Start] [int] NULL,
+	[Bus_Fuel_End] [int] NULL,
+	[Reservation_status] [varchar](20) NULL,
+	[Bus_Id] [int] NULL,
+	[Customer_Id] [int] NULL,
+	[Bus_Rental_Id] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Reservation_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Reservation]  WITH CHECK ADD FOREIGN KEY([Bus_Id])
+REFERENCES [dbo].[Bus] ([Bus_Id])
+GO
+
+ALTER TABLE [dbo].[Reservation]  WITH CHECK ADD FOREIGN KEY([Bus_Rental_Id])
+REFERENCES [dbo].[Bus_Rental] ([Bus_Rental_Id])
+GO
+
+ALTER TABLE [dbo].[Reservation]  WITH CHECK ADD FOREIGN KEY([Customer_Id])
+REFERENCES [dbo].[Customer] ([Customer_Id])
+GO
+
+
