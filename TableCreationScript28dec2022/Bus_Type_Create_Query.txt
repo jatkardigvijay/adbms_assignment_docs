@@ -1,0 +1,37 @@
+USE [RentalAccomodationMgmtSystem]
+GO
+
+/****** Object:  Table [dbo].[Bus_Type]    Script Date: 28-Dec-22 11:07:19 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Bus_Type](
+	[Bus_Type_Id] [int] IDENTITY(1,1) NOT NULL,
+	[Bus_Power_Steering] [varchar](25) NULL,
+	[Bus_Air_Conditioner] [varchar](25) NOT NULL,
+	[Bus_Passenger_Airbag] [int] NOT NULL,
+	[Bus_Driver_Airbag] [int] NOT NULL,
+	[Bus_Sun_Roof] [int] NULL,
+	[Bus_Driver_Seat] [int] NULL,
+	[Bus_Fog_Lights] [int] NULL,
+	[Bus_Type] [int] NULL,
+	[Bus_Id] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Bus_Type_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Bus_Type]  WITH CHECK ADD FOREIGN KEY([Bus_Id])
+REFERENCES [dbo].[Bus] ([Bus_Id])
+GO
+
+ALTER TABLE [dbo].[Bus_Type]  WITH CHECK ADD FOREIGN KEY([Bus_Id])
+REFERENCES [dbo].[Bus] ([Bus_Id])
+GO
+
+

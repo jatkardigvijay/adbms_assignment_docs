@@ -1,0 +1,2 @@
+SELECT Customer_First_Name, Customer_Last_Name, Customer_Address, Customer_Mobile_Number, Customer_Email
+FROM dbo.Customer

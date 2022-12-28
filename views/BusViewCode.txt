@@ -1,0 +1,2 @@
+SELECT Bus_Id, Bus_Name, Bus_Engine_No, Bus_Chassis_No, Bus_Model_No, Bus_Price, Bus_Seating_Capacity, Bus_Fuel_Type, Bus_Insurance_Type
+FROM dbo.Bus
