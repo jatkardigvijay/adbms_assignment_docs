@@ -1,0 +1,10 @@
+CREATE TRIGGER trInsertReservation
+ON Reservation  
+FOR INSERT  
+AS  
+BEGIN  
+  Declare @Id int  
+  SELECT @Id = Reservation_Id from inserted  
+  INSERT INTO Reservation_Audit  
+  VALUES ('New reservation with Id = ' + CAST(@Id AS VARCHAR(10)) + ' is added at ' + CAST(Getdate() AS VARCHAR(22)))  
+END  

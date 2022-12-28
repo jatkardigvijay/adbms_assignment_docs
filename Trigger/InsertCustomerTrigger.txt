@@ -1,0 +1,13 @@
+CREATE TRIGGER trInsertCustomer
+ON Customer  
+FOR INSERT  
+AS  
+BEGIN  
+  Declare @Id int  
+  SELECT @Id = Customer_Id from inserted  
+  INSERT INTO Customer_Audit  
+  VALUES ('New Customer with Id = ' + CAST(@Id AS VARCHAR(10)) + ' is added at ' + CAST(Getdate() AS VARCHAR(22)))  
+END  
+
+
+
